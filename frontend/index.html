@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diary App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Diary App</h1>
+
+    <!-- Logout button -->
+    <button id="logout-btn" style="display:none; float:right; margin-bottom:10px;">Logout</button>
+
+    <!-- Login Form -->
+    <div id="auth-container">
+      <h2>Login</h2>
+      <form id="auth-form">
+        <label for="username-login">Username</label>
+        <input type="text" id="username-login" required />
+        <label for="password-login">Password</label>
+        <input type="password" id="password-login" required />
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+      <p>Belum punya akun? <button id="show-register">Register di sini</button></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-container" style="display:none;">
+      <h2>Register</h2>
+      <form id="register-form">
+        <label for="username-register">Username</label>
+        <input type="text" id="username-register" required />
+        <label for="password-register">Password</label>
+        <input type="password" id="password-register" required />
+        <button type="submit" id="register-btn">Register</button>
+      </form>
+      <p>Sudah punya akun? <button id="show-login">Login di sini</button></p>
+    </div>
+
+    <!-- Form tambah diary -->
+    <div id="diary-section" style="display:none;">
+      <h2>Tambah Diary</h2>
+      <form>
+        <label for="tanggal">Tanggal</label>
+        <input data-id id="tanggal" type="date" required />
+
+        <label for="isi">Isi Diary</label>
+        <textarea data-id id="isi" placeholder="Tulis diary kamu di sini..." required></textarea>
+
+        <button type="submit">Simpan</button>
+      </form>
+
+      <!-- Daftar diary -->
+      <h2>Daftar Diary</h2>
+      <div id="diary-list"></div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

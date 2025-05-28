@@ -1,0 +1,57 @@
+### Register user baru
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+###
+
+### Login user untuk dapat token JWT
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+###
+
+### Ganti <your_token_here> dengan token JWT yang didapat dari response login
+
+### GET all notes (Retrieve all diaries)
+GET http://localhost:5000/note
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc0NzkxMjAyMSwiZXhwIjoxNzQ3OTk4NDIxfQ.oxV70eIO992nAjeYrCiADcI3BHbR-Bpn5b2siy1ZTNA
+
+###
+
+### POST a new note (Create a new diary entry)
+POST http://localhost:5000/add-note
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc0NzkxMjAyMSwiZXhwIjoxNzQ3OTk4NDIxfQ.oxV70eIO992nAjeYrCiADcI3BHbR-Bpn5b2siy1ZTNA
+
+{
+  "tanggal": "2025-03-05",
+  "isi": "This is a sample diary entry."
+}
+
+###
+
+### PUT (Update) an existing note by ID
+PUT http://localhost:5000/edit-note/9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc0NzkxMjAyMSwiZXhwIjoxNzQ3OTk4NDIxfQ.oxV70eIO992nAjeYrCiADcI3BHbR-Bpn5b2siy1ZTNA
+
+{
+  "tanggal": "2025-03-06",
+  "isi": "Updated diary content."
+}
+
+###
+
+### DELETE a note by ID
+DELETE http://localhost:5000/delete-note/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc0NzkxMjAyMSwiZXhwIjoxNzQ3OTk4NDIxfQ.oxV70eIO992nAjeYrCiADcI3BHbR-Bpn5b2siy1ZTNA
